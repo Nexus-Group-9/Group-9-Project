@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Transposition Nexus - Group 9</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f6f9;
+    }
+
+    .banner {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .banner img {
+      width: 80px;
+    }
+
+    .banner h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #003366;
+    }
+
+    .description {
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    textarea, input {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .output-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .copy-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background-color: #ccc;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+
+    h2, h3 {
+      color: #003366;
+    }
+
+    @media (max-width: 600px) {
+      .banner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .banner img {
+        width: 60px;
+      }
+      .banner h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="banner">
+  <img src="image.png" alt="Transposition Nexus Logo">
+  <h1>Enhanced Transposition Nexus - Group 9</h1>
+</div>
+
+<div class="description">
+  <p><strong>This tool was developed for module CC6004 Network and Cloud Security - Year 2024/25.</strong></p>
+  <p><strong>Group Members:</strong></p>
+  <ul>
+    <li>ADEBOLA AKINYOOYE</li>
+    <li>SAYIDALI YASSIN MOHAMED</li>
+    <li>CALLUM HENRY GARY TONG</li>
+    <li>DAMILOLA AYANGA</li>
+    <li>JAKUB KACPER STASIK</li>
+    <li>NERINGA URBONAITE</li>
+    <li>SARAH MULEBA</li>
+  </ul>
+</div>
+
+<h2>Plain Text</h2>
+<textarea id="inputText" placeholder="Enter text to encrypt..." rows="6"></textarea><br>
+<input type="password" id="passKeyEnc" placeholder="Enter secret key (11-16 chars)" /><br>
+<button onclick="encrypt()">Encrypt</button><br>
+
+<h3>Encrypted Text</h3>
+<div class="output-group">
+  <textarea id="encryptedText" placeholder="Encrypted output..." rows="6" readonly></textarea>
+  <button class="copy-btn" onclick="copyToClipboard('encryptedText')">📋</button>
+</div>
+
+<h3>Encrypted Passphrase</h3>
+<div class="output-group">
+  <textarea id="encryptedPassphrase" placeholder="Encrypted passphrase..." rows="1" readonly></textarea>
+  <button class="copy-btn" onclick="copyToClipboard('encryptedPassphrase')">📋</button>
+</div>
+
+<h2>Decrypt Text</h2>
+<textarea id="inputEncrypted" placeholder="Enter code to decrypt..." rows="6"></textarea><br>
+<input type="password" id="passKeyDec" placeholder="Enter secret key (11-16 chars)" /><br>
+<textarea id="inputEncryptedPassphrase" placeholder="Enter encrypted passphrase..." rows="1"></textarea><br>
+<button onclick="decrypt()">Decrypt</button><br>
+
+<div class="output-group">
+  <textarea id="decryptedText" placeholder="Decrypted output..." rows="6" readonly></textarea>
+  <button class="copy-btn" onclick="copyToClipboard('decryptedText')">📋</button>
+</div>
+
+<script>
+function copyToClipboard(id) {
+  const el = document.getElementById(id);
+  el.select();
+  el.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  alert("Copied to clipboard!");
+}
+</script>
+</body>
+</html>
